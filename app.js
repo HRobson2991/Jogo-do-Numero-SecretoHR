@@ -18,8 +18,8 @@ function exibirTextoNaTela(tag, texto) {
 }
 
 function mensagemInicial(){
-    exibirTextonaTela('h1', 'Jogo do Número Secreto');
-    exibirTextonaTela('p', 'Tente adivinhar o número secreto entre 1 e 10!');
+    exibirTextoNaTela('h1', 'Jogo do Número Secreto');
+    exibirTextoNaTela('p', 'Tente adivinhar o número secreto entre 1 e 10!');
 }
 
 mensagemInicial();
@@ -28,18 +28,18 @@ function verificarChute(){
     let chute = document.querySelector('.container__input').value;
 
     if (chute == numeroSecreto){
-        exibirTextonaTela('h1', 'Parabéns!');
+        exibirTextoNaTela('h1', 'Parabéns!');
 
         let palavraTentativas = tentativas > 1 ? 'tentativas' : 'tentativa';
         let mensagemTentativas = `Você acertou em ${tentativas} ${palavraTentativas}`;
-        exibirTextonaTela('p', mensagemTentativas);
+        exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').disabled = false;
 
     } else {
         if (chute < numeroSecreto){
-            exibirTextonaTela('h1', `O número secreto é maior! que ${chute}`);
+            exibirTextoNaTela('h1', `O número secreto é maior! que ${chute}`);
         } else {
-            exibirTextonaTela('h1', `O número secreto é menor! que ${chute}`);
+            exibirTextoNaTela('h1', `O número secreto é menor! que ${chute}`);
         }
         tentativas++;
         limparCampoDeChute();
@@ -74,4 +74,5 @@ function reiniciarJogo(){
   tentativas = 1;
   mensagemInicial();
   document.getElementById('reiniciar').setAttribute('disabled', true);
+
 }
